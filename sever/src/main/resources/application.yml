@@ -1,0 +1,13 @@
+#链式哈希单调读一致性   https://zhuanlan.zhihu.com/p/67949045
+server:
+  startPort: 36668 #该集群区域节点的所有节点起始端口号
+  nodeSum: 4  #该集群区域节点的节点数字
+  nodeWorkerThreadSum: 0  #每个节点的业务处理线程数量，默认0，可以用1，大于1可能发生并发错误
+  # nodesId: 0  #节点集群Id  自动生成
+  scopeId: 0  #节点集群分区Id
+  expectedLoad: 30000 #单个节点的期望每秒吞吐量
+  client: ${openClient:true}
+nextServer:  #当前节点客户端请求连接的下一个nodes集群
+  ip: 127.0.0.1 #该集群区域节点的所有节点起始端口号
+  startPort: 35558 #该集群区域节点的所有节点起始端口号
+  nodeSum: 4  #该集群区域节点的节点数字
